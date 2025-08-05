@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body{
+            background-color: #efefef;
+        }
+        .img-gallery{
+            width: 80%;
+            margin: 100px auto 50px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+            grid-gap: 30px;
+        }
+        .img-gallery img{
+            width: 100%;
+            cursor: pointer;
+            transition: 1.1s;
+        }
+        .img-gallery img:hover{
+            transform: scale(0.8) rotate(-15deg);
+            border-radius: 30px;
+            box-shadow: 0 32px 75px rgba(68, 77, 136, 0.23);
+        }
+        .fullImgBox{
+            width: 100%;
+            height: 100vh;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 100;
+            background: rgba(0,0,0,0.9);
+        }
+        .fullImgBox img{
+            width: 100%;
+            max-width: 500px;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+        .fullImgBox span{
+            font-size: 30px;
+            position: absolute;
+            top: 5%;
+            right: 5%;
+            color: white;
+            cursor: pointer;
+        }
+        .text{
+            font-size: 30px;
+            background: linear-gradient(135deg,pink,hotpink);
+            text-align: center;
+            padding: 10px 20px;
+            border: 0;
+            outline: 0;
+            margin: 20px auto 0;
+            border-radius: 20px;
+            text-transform: capitalize;
+            width: 620px;
+        }
+    </style>
+</head>
+<body>
+    <div class="text">❤️❤️my baby ❤️girl❤️ mini gallery❤️❤️</div>
+    <div class="fullImgBox" id="full-img">
+        <img src="Ruth/img1.jpg" alt="" class="fullImg">
+        <span onclick="closeFullImgBox()">x</span>
+    </div>
+    <div class="img-gallery">
+        <img src="Ruth/img1.jpg" alt="" onclick="openFullImgBox(this.src)">
+        <img src="Ruth/img2.jpg" alt="" onclick="openFullImgBox(this.src)">
+        <img src="Ruth/img3.jpg" alt="" onclick="openFullImgBox(this.src)">
+        <img src="Ruth/img4.jpg" alt="" onclick="openFullImgBox(this.src)">
+        <img src="Ruth/img5.jpg" alt="" onclick="openFullImgBox(this.src)">
+        <img src="Ruth/img6.jpg" alt="" onclick="openFullImgBox(this.src)">
+        <img src="Ruth/img7.jpg" alt="" onclick="openFullImgBox(this.src)">
+        <img src="Ruth/img8.jpg" alt="" onclick="openFullImgBox(this.src)">
+        <img src="Ruth/img9.jpg" alt="" onclick="openFullImgBox(this.src)">
+        <img src="Ruth/img10.jpg" alt="" onclick="openFullImgBox(this.src)">
+        <img src="Ruth/img11.jpg" alt="" onclick="openFullImgBox(this.src)">
+        <img src="Ruth/img12.jpg" alt="" onclick="openFullImgBox(this.src)">
+    </div>
+
+
+    <script>
+        const fullImgBox = document.querySelector("#full-img")
+        const fullImg = document.querySelector(".fullImg")
+
+        function openFullImgBox(pic){
+            fullImgBox.style.display = "flex"
+            fullImg.src = pic
+        }
+
+        function closeFullImgBox(){
+            fullImgBox.style.display = "none"
+        }
+
+    </script>
+</body>
+</html>
